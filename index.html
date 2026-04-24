@@ -119,7 +119,7 @@
       <div class="panel-body">
         <input type="text" id="shareUrlDisplay" class="share-url-box" readonly title="Click to select all">
         <div style="margin-top:10px;">
-            <canvas id="qr-canvas"></canvas>
+            <img id="qr-canvas"/>
         </div>
       </div>
     </div>
@@ -226,10 +226,13 @@ function updateShareMetadata() {
   
   shareUrlDisplay.value = finalUrl;
 
-  QRCode.toCanvas(qrCanvas, finalUrl, {
+  QRCode.toDataURL(finalUrl, {
     width: 180,
     margin: 2,
     color: { dark: '#003d7a', light: '#ffffff' }
+  }, function (err, url) {
+    if (err) return console.error(err);
+    document.getElementById('qr-canvas').src = url;
   });
 }
 
