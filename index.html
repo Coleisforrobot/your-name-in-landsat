@@ -253,7 +253,7 @@ function restoreFromIds(idString, rawData) {
         return null;
     }).filter(x => x !== null);
 
-    input.value = textStr;
+    input.value = textStr.toLowerCase();
     renderBoard();
     updateShareMetadata();
 }
