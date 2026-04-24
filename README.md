@@ -7,5 +7,5 @@ Built as a hobby project, not serious. For transparency, the design and some of 
 Available on GitHub Pages at https://coleisforrobot.github.io/your-name-in-landsat/
 
 ### TODO:
-[ ] Rewrite the download image code. Atm it just takes a screenshot which isn't very clean and doesn't really match the original version's output
-[ ] Make it load all the images in before letting the user type so it doesn't seem broken sometimes and take ages for some images to load
+* Rewrite the download image code. Atm it just takes a screenshot which isn't very clean and doesn't really match the original version's output
+* Make it load all the images in before letting the user type so it doesn't seem broken sometimes and take ages for some images to load
