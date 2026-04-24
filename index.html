@@ -82,7 +82,7 @@
   .panel-body { padding: 10px; }
   .share-url-box { width: 100%; font-family: monospace; font-size: 10px; padding: 4px; border: 1px solid #999; background: #eee; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .space-gap { width: 32px; }
-  #qr-canvas { width: 100% !important; height: auto !important; border: 1px solid #ccc; background: #fff; display: block; }
+  #qr-canvas { width: 100% !important; height: auto !important; border: 1px solid #ccc; background: #fff; display: block; image-rendering: pixelated; }
   .footer { height: auto; min-height: 25px; background: #d4d0c8; border-top: 1px solid #999; padding: 5px 15px; font-size: 10px; color: #444; }
 </style>
 
@@ -226,11 +226,7 @@ function updateShareMetadata() {
   
   shareUrlDisplay.value = finalUrl;
 
-  QRCode.toDataURL(finalUrl, {
-    width: 180,
-    margin: 2,
-    color: { dark: '#003d7a', light: '#ffffff' }
-  }, function (err, url) {
+  QRCode.toDataURL(finalUrl, { margin: 2, color: { dark: '#003d7a', light: '#ffffff' } }, function (err, url) {
     if (err) return console.error(err);
     document.getElementById('qr-canvas').src = url;
   });
